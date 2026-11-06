@@ -1,0 +1,10 @@
+
+.lista-links{
+    position: absolute;
+    visibility: hidden;
+    z-index: 100;
+}
+
+.pasta-links:hover ~ .lista-links{
+    visibility: visible;
+}
