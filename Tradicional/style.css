@@ -38,8 +38,18 @@ body {
 }
 
 header{
-
+    background-color: green;
 }
 nav{
     padding: 0 20px;
+}
+.titulo-principal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#icon-linux{
+    width: 100px;
+    height: 100px;
 }
