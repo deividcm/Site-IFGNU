@@ -9,43 +9,40 @@ body {
     display: flex;
     flex-direction: column;
 }
-
-
 .lista-links{
-    margin-top: 20px;
+    margin-top: 15px;
     position: absolute;
     visibility: hidden;
     z-index: 100;
     list-style: none;
     transition: visibility 0.3s;
+    text-align: left;
 }
-
+.item-menu:hover{
+    background-color: #1c7e33;
+}
 .item-menu:hover .lista-links{
-    visibility: visible;
-}
-.lista-links:hover{
     visibility: visible;
 }
 .pasta-links{
     display: block;
-    width: 100%;
-    height: 100%;
+    flex: 1;
 }
 .item-menu{
     padding: 14px;
     text-align: center;
     flex: 1;
+    display: block;
 }
 .menu{
-    background-color: chartreuse;
+    margin: 0 auto;
+    border-radius: 4px;
+    background-color: #28a745;
     display: flex;
     flex-direction: row;
     list-style: none;
 }
 
-header{
-    background-color: green;
-}
 nav{
     padding: 0 20px;
 }
@@ -59,3 +56,8 @@ nav{
     width: 100px;
     height: 100px;
 }
+.titulo-principal{
+    background-color: green;
+    color: white;
+}
+
