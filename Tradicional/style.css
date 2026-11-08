@@ -12,13 +12,18 @@ body {
 
 
 .lista-links{
+    margin-top: 20px;
     position: absolute;
     visibility: hidden;
     z-index: 100;
     list-style: none;
+    transition: visibility 0.3s;
 }
 
-.pasta-links:hover ~ .lista-links{
+.item-menu:hover .lista-links{
+    visibility: visible;
+}
+.lista-links:hover{
     visibility: visible;
 }
 .pasta-links{
@@ -32,6 +37,7 @@ body {
     flex: 1;
 }
 .menu{
+    background-color: chartreuse;
     display: flex;
     flex-direction: row;
     list-style: none;
