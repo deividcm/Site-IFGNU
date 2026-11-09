@@ -9,6 +9,10 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+footer{
+    margin-top: auto;
+}
 .lista-links{
     margin-top: 15px;
     position: absolute;
@@ -27,6 +31,9 @@ body {
 .pasta-links{
     display: block;
     flex: 1;
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
 }
 .item-menu{
     padding: 14px;
