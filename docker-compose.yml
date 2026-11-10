@@ -1,0 +1,7 @@
+services:
+  website:
+    build: .
+    container_name: ifgnu
+    ports:
+      - "9001:80"
+    restart: unless-stopped
