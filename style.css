@@ -83,6 +83,7 @@ nav{
     height: 100px;
 }
 .titulo-principal{
+    padding: 20px;
     background-color: green;
     color: white;
 }
