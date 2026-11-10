@@ -1,44 +1,83 @@
-/* Tokens de Design e Variáveis */
+/* Tokens de Design e Variáveis de Sistema - IF GNU */
 :root {
-  /* Brand */
-  --color-brand-green-900: #0d4a1a;
-  --color-brand-green-700: #135823;
-  --color-brand-green-500: #1a7a30;
-  --color-brand-green-400: #28a745;
-  --color-brand-green-100: #d4f1dc;
-  --color-brand-green-050: #f0faf2;
+  /* Brand / Identidade Visual IF GNU (Verde moderno, vivo e contrastante) */
+  --color-brand-green-950: #022c22;
+  --color-brand-green-900: #064e3b;
+  --color-brand-green-800: #065f46;
+  --color-brand-green-700: #047857;
+  --color-brand-green-600: #059669;
+  --color-brand-green-500: #10b981;
+  --color-brand-green-400: #34d399;
+  --color-brand-green-200: #a7f3d0;
+  --color-brand-green-100: #d1fae5;
+  --color-brand-green-050: #ecfdf5;
 
-  /* Status */
-  --color-status-draft: #6b7280;
-  --color-status-pending: #d97706;
-  --color-status-approved: #059669;
-  --color-status-rejected: #dc2626;
-  --color-status-done: #7c3aed;
+  /* Cores de Status Semânticas (WCAG AA Compliance) */
+  --color-status-draft: #475569;
+  --color-status-draft-bg: #f1f5f9;
+  --color-status-draft-border: #cbd5e1;
 
-  /* Neutrals */
-  --color-gray-950: #0a0a0a;
-  --color-gray-800: #1f2937;
-  --color-gray-600: #4b5563;
-  --color-gray-400: #9ca3af;
-  --color-gray-200: #e5e7eb;
-  --color-gray-100: #f3f4f6;
-  --color-gray-050: #f9fafb;
+  --color-status-pending: #b45309;
+  --color-status-pending-bg: #fef3c7;
+  --color-status-pending-border: #fde68a;
 
-  /* Semantics */
-  --color-bg: var(--color-gray-050);
+  --color-status-approved: #047857;
+  --color-status-approved-bg: #d1fae5;
+  --color-status-approved-border: #a7f3d0;
+
+  --color-status-rejected: #b91c1c;
+  --color-status-rejected-bg: #fee2e2;
+  --color-status-rejected-border: #fca5a5;
+
+  --color-status-done: #6d28d9;
+  --color-status-done-bg: #ede9fe;
+  --color-status-done-border: #ddd6fe;
+
+  /* Escala de Neutros (Slate Profissional) */
+  --color-gray-950: #0f172a;
+  --color-gray-900: #1e293b;
+  --color-gray-800: #334155;
+  --color-gray-700: #475569;
+  --color-gray-600: #64748b;
+  --color-gray-500: #94a3b8;
+  --color-gray-400: #cbd5e1;
+  --color-gray-300: #e2e8f0;
+  --color-gray-200: #e2e8f0;
+  --color-gray-100: #f1f5f9;
+  --color-gray-050: #f8fafc;
+
+  /* Aplicações Semânticas */
+  --color-bg: #f8fafc;
   --color-surface: #ffffff;
-  --color-border: var(--color-gray-200);
-  --color-text: var(--color-gray-800);
-  --color-text-muted: var(--color-gray-600);
-  --color-accent: var(--color-brand-green-400);
-  --color-primary: var(--color-brand-green-500);
+  --color-surface-hover: #fcfdfe;
+  --color-border: #e2e8f0;
+  --color-border-subtle: #f1f5f9;
+  --color-border-focus: #10b981;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-text-caption: #94a3b8;
+  --color-primary: #059669;
+  --color-primary-hover: #047857;
+  --color-primary-active: #065f46;
+  --color-primary-light: #ecfdf5;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  /* Sombras Modernas e Camadas */
+  --shadow-xs: 0 1px 2px 0 rgb(15 23 42 / 0.05);
+  --shadow-sm: 0 1px 3px 0 rgb(15 23 42 / 0.08), 0 1px 2px -1px rgb(15 23 42 / 0.08);
+  --shadow-md: 0 4px 6px -1px rgb(15 23 42 / 0.07), 0 2px 4px -2px rgb(15 23 42 / 0.07);
+  --shadow-lg: 0 10px 15px -3px rgb(15 23 42 / 0.08), 0 4px 6px -4px rgb(15 23 42 / 0.05);
+  --shadow-hover: 0 12px 20px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.05);
 
-  /* Radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  /* Bordas Arredondadas */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-full: 9999px;
+
+  /* Transições e Microinterações */
+  --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }

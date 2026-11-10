@@ -1,4 +1,4 @@
-/* Estilos Globais e Reset */
+/* Estilos Globais, Reset e Sistema de Design IF GNU */
 @import './tokens.css';
 
 *, *::before, *::after {
@@ -7,8 +7,14 @@
   padding: 0;
 }
 
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
   min-height: 100vh;
@@ -20,29 +26,314 @@ body {
 #app {
   display: flex;
   flex: 1;
+  min-height: 100vh;
 }
 
 .main-content {
   flex: 1;
-  padding: 24px;
+  padding: 32px 40px;
   overflow-y: auto;
+  max-width: 1400px;
+  width: 100%;
 }
 
-/* Utilitários Básicos */
+/* Animações e Microinterações Suaves */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Tipografia e Títulos */
+h1, h2, h3, h4 {
+  color: var(--color-gray-950);
+  letter-spacing: -0.02em;
+}
+
+.page-header {
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.page-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-gray-950);
+}
+
+.page-description {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-top: 6px;
+}
+
+/* Botões Modernos e Acessíveis (Fitts's Law + Feedback Tátil) */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: 500;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
   cursor: pointer;
-  border: none;
-  background: var(--color-brand-green-500);
-  color: #fff;
-  transition: opacity 0.2s ease;
+  border: 1px solid transparent;
+  transition: var(--transition-normal);
   text-decoration: none;
+  line-height: 1.25;
+  outline: none;
+  white-space: nowrap;
 }
-.btn:hover {
-  opacity: 0.9;
+
+.btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.35);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Botão Primário */
+.btn-primary, .btn:not(.btn-secondary):not(.btn-danger):not(.btn-ghost):not(.btn-icon) {
+  background: var(--color-primary);
+  color: #ffffff;
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-primary:hover, .btn:not(.btn-secondary):not(.btn-danger):not(.btn-ghost):not(.btn-icon):hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-1.5px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Botão Secundário */
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-gray-800);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-secondary:hover {
+  background: var(--color-gray-100);
+  border-color: var(--color-gray-400);
+  color: var(--color-gray-950);
+  transform: translateY(-1.5px);
+}
+
+/* Botão Perigo */
+.btn-danger {
+  background: #dc2626;
+  color: #ffffff;
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-danger:hover {
+  background: #b91c1c;
+  transform: translateY(-1.5px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Botão Ícone */
+.btn-icon {
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-gray-600);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.btn-icon:hover {
+  background: var(--color-gray-100);
+  color: var(--color-gray-950);
+  transform: translateY(-1px);
+}
+
+.btn-icon.danger:hover {
+  background: var(--color-status-rejected-bg);
+  color: var(--color-status-rejected);
+}
+
+/* Cards & Superfícies */
+.card, .form-card, .section-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-normal);
+}
+
+.interactive-card {
+  cursor: pointer;
+}
+
+.interactive-card:hover {
+  border-color: var(--color-brand-green-200);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* Inputs, Textareas e Formulários (Lei da Proximidade) */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+}
+
+.form-input, .form-textarea, .form-select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: var(--color-gray-900);
+  background: var(--color-surface);
+  font-family: inherit;
+  transition: var(--transition-fast);
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.form-input::placeholder, .form-textarea::placeholder {
+  color: var(--color-gray-400);
+}
+
+/* Barra de Ações de Formulário (Fora e abaixo da <div> da seção) */
+.form-actions-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  margin-bottom: 24px;
+  padding: 14px 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+}
+
+.feedback-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-status-approved);
+  background: var(--color-status-approved-bg);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-status-approved-border);
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Badges e Pílulas de Status */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  line-height: 1.3;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Modais */
+.modal-overlay {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-container {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 28px;
+}
+
+/* Logo do Pinguim */
+.brand-penguin-img {
+  height: 28px;
+  width: auto;
+  max-width: 28px;
+  object-fit: contain;
+  vertical-align: middle;
 }

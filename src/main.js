@@ -23,7 +23,13 @@ const routes = {
     afterRender: () => afterRenderCommunity()
   },
   '/404': {
-    render: () => `<h1>Página não encontrada</h1>`
+    render: () => `
+      <div class="card animate-slide-up" style="padding: 48px; text-align: center; max-width: 480px; margin: 40px auto;">
+        <h1 style="font-size: 2rem; font-weight: 800; color: var(--color-gray-950); margin-bottom: 8px;">404</h1>
+        <p style="color: var(--color-text-muted); margin-bottom: 24px;">Página não encontrada ou rota inexistente.</p>
+        <a href="#/" class="btn btn-primary">Voltar ao Painel</a>
+      </div>
+    `
   }
 };
 
