@@ -1,61 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>IFGNU - Inicio</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        
-    
-        <header>
-
-            <div class="titulo-principal">
-                <h1>
-                    IFGNU
-                </h1>
-            </div>
-
-            <!-- É para ser um daqueles menus que expandem uma lista de links -->
-            <nav>
-                <ul class="menu">
-                    <li class="item-menu">
-                        <a class="pasta-links" href="index.html">Inicio</a>
-                        <ul class="lista-links">
-                            <li>
-                                <a href="projetos.html">Projetos</a>
-                            </li> 
-                            <li>
-                                <a href="comunidade.html">Comunidade</a>
-                            </li> 
-                        </ul>
-                    </li>
-                    <li class="item-menu">
-                        <a class="pasta-links" href="Servidores/servidores.html">Servidores</a>
-                        <ul class="lista-links">
-                            <li>
-                                <a href="Servidores/servidor-dev.html">Desenvolvimento</a>
-                            </li>
-                            <li>
-                                <a href="Servidores/servidor-homologacao.html">Homologação</a>
-                            </li>
-                            <li>
-                                <a href="Servidores/FAQ.html">FAQ</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="item-menu">
-                        <a class="pasta-links">Outros</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-
-        </main>
-        <footer>
-            Contato: <a href="mailto:grupoifgnu@gmail.com" >grupoifgnu@gmail.com</a>
-        </footer>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IF GNU - Plataforma de Projetos</title>
+  </head>
+  <body>
+    <div id="app">
+      <app-sidebar></app-sidebar>
+      <main class="main-content" id="router-view"></main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
