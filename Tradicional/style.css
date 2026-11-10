@@ -14,13 +14,21 @@ footer{
     margin-top: auto;
 }
 .lista-links{
-    margin-top: 15px;
     position: absolute;
     visibility: hidden;
     z-index: 100;
     list-style: none;
     transition: visibility 0.3s;
     text-align: left;
+    background-color: #135823;
+    padding: 14px;
+    margin: 0 auto;
+    margin-top: 31px;
+}
+.lista-links a{
+    text-decoration: none;
+    color: white;
+    margin: 20px;
 }
 .item-menu:hover{
     background-color: #1c7e33;
@@ -30,16 +38,18 @@ footer{
 }
 .pasta-links{
     display: block;
-    flex: 1;
     text-decoration: none;
     color: white;
     font-weight: bolder;
 }
 .item-menu{
-    padding: 14px;
-    text-align: center;
+    /*width: 440px;*/
     flex: 1;
-    display: block;
+    font-size: 16px;
+    padding: 14px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 .menu{
     margin: 0 auto;
