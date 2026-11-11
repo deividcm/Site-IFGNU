@@ -1,0 +1,45 @@
+main{
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
+}
+main section{
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: column;
+}
+main section h2{
+    color: #28a745;
+    font-weight: bold;
+    text-align: center;
+    font-size: 32px;
+}
+main section h3{
+    color: #559258;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+}
+main section p{
+    margin-top: 20px;
+    font-size: 24px;
+    padding: 40px;
+    text-align: justify;
+}
+.botoes{
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.botao-servidor{
+    color: white;
+    background-color: #28a745;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 20px;
+    font-weight: bold;
+}
+.botao-servidor:hover{
+    background-color: #1c7e33;
+    transition: background-color 0.3s;
+}
