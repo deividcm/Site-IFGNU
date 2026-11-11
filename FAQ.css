@@ -21,3 +21,6 @@ main section h2{
     padding: 24px;
     font-size: 24px;
 }
+.pergunta p{
+    text-align: justify;
+}
