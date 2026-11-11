@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IFGNU - FAQ</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="FAQ.css">
+    </head>
+    <body>
+        
+    
+        <header>
+
+            <div class="titulo-principal">
+                <h1>
+                    IFGNU
+                </h1>
+            </div>
+
+            <!-- É para ser um daqueles menus que expandem uma lista de links -->
+            <nav>
+                <ul class="menu">
+                    <li class="item-menu">
+                        <a class="pasta-links" href="index.html">Inicio</a>
+                        <ul class="lista-links">
+                            <li>
+                                <a href="projetos.html">Projetos</a>
+                            </li> 
+                            <li>
+                                <a href="comunidade.html">Comunidade</a>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li class="item-menu">
+                        <a class="pasta-links" href="servidores.html">Servidores</a>
+                        <ul class="lista-links">
+                            <li>
+                                <a href="servidor-dev.html">Desenvolvimento</a>
+                            </li>
+                            <li>
+                                <a href="servidor-homologacao.html">Homologação</a>
+                            </li>
+                            <li>
+                                <a href="FAQ.html">FAQ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="item-menu">
+                        <a class="pasta-links">Outros</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+
+
+        <main>
+            <section>
+                <h2>
+                    <strong>Perguntas Frequentes</strong>
+                </h2>
+                <div class="pergunta">
+                    <h3><strong>Equipe com várias pessoas:</strong></h3>
+                    <p>
+                            Para uma melhor organização apenas uma pessoa será responsável por configurar o sistema no servidor então apenas um usuário será criado e responsabilizado pelo sistema.
+                    </p>
+                </div>
+            </section>
+            <section>
+                <h2><strong>Erros Comuns</strong></h2>
+                <div class="pergunta">
+                    <h3><strong>O Sistema caiu de um dia pro outro:</strong></h3>
+                    <p> Quando o servidor desliga/cai, como por exemplo quando a energia cai, todos os sistemas caem juntos. Para que eles reiniciem quando o servidor ligar de novo é necessário colocar a instrução “restart: unless-stopped” no arquivo docker-compose.yml, ela faz com que o sistema reinicie a não ser que alguém tenha manualmente derrubado ele. Caso você queira que o sistema reinicie até mesmo em casos que ele foi derrubado manualmente basta trocar a tag “unless-stopped” por “always”.  Lembrando que mesmo usando “always” o sistema só reinicia após o Docker reiniciar.</p>
+                </div>
+                <div class="pergunta">
+                    <h3><strong>Erro “You don’t have permission to access this resource. Server unable to read htaccess file, denying access to be safe”:</strong></h3>
+                    <p>O erro ocorre quando o conteúdo do sistema não foi copiado corretamente pelo Docker, geralmente quando você tenta forçar o Docker a utilizar arquivos dentro do seu usuário. </p>
+                </div>
+                
+            </section>
+            
+        </main>
+
+
+
+        <footer>
+            Contato: <a href="mailto:grupoifgnu@gmail.com" >grupoifgnu@gmail.com</a>
+        </footer>
+    </body>
+</html>

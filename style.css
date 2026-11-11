@@ -29,10 +29,10 @@ footer a{
     list-style: none;
     transition: visibility 0.3s;
     text-align: left;
-    background-color: #135823;
+    background-color: #559258;
     padding: 14px;
     margin: 0 auto;
-    margin-top: 31px;
+    margin-top: 41px;
 }
 .lista-links a{
     text-decoration: none;
@@ -54,7 +54,7 @@ footer a{
 .item-menu{
     /*width: 440px;*/
     flex: 1;
-    font-size: 16px;
+    font-size: 24px;
     padding: 14px 0;
     text-align: center;
     display: flex;
@@ -77,14 +77,8 @@ nav{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
-#icon-linux{
-    width: 100px;
-    height: 100px;
-}
-.titulo-principal{
     padding: 20px;
     background-color: green;
     color: white;
+    font-size: 32px;
 }
-

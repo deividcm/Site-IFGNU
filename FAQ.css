@@ -1,0 +1,23 @@
+main{
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
+}
+main section{
+    background-color: white;
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+main section h2{
+    color: #28a745;
+    font-weight: bold;
+    text-align: center;
+    font-size: 32px;
+}
+.pergunta{
+    margin: 10px 0;
+    padding: 24px;
+    font-size: 24px;
+}
